@@ -21,7 +21,7 @@
   import { zhCN, dateZhCN, darkTheme } from 'naive-ui';
   import { LockScreen } from '@/components/Lockscreen';
   import { AppProvider } from '@/components/Application';
-  import { useScreenLockStore } from '@/store/modules/screenLock.js';
+  import { useScreenLockStore } from '@/store/modules/screenLock';
   import { useRoute } from 'vue-router';
   import { useDesignSettingStore } from '@/store/modules/designSetting';
   import { lighten } from '@/utils/index';
@@ -53,7 +53,7 @@
 
   const getDarkTheme = computed(() => (designStore.darkTheme ? darkTheme : undefined));
 
-  let timer: NodeJS.Timer;
+  let timer: NodeJS.Timeout;
 
   const timekeeping = () => {
     clearInterval(timer);
